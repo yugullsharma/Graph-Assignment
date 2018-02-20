@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+    <meta charset ="utf-8">
+        <link rel="stylesheet" type="text/css" href="vendors/normalize.css">
+        <link rel="stylesheet" type="text/css" href="vendors/grid.css">
+        <link href='http://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="resource/style.css">
+
+        <Title>Assignment | Graph</Title>
+    </head>
+    <body>
+        <div class="row field-content">
+            <div class="row msg"> Please Enter value of X and Y</div>
+
+            X Value:
+            <input id="xValue" type="number" step="any" placeholder="Enter X-Value"> Y Value:
+            <input id="yValue" type="number" step="any" placeholder="Enter Y-Value">
+            <button id="renderButton">Add DataPoint & Render</button>
+            <div id="chartContainer" style="height: 270px; width: 100%;">
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            window.onload = function() {
+                var dps = []; //dataPoints.
+
+                var chart = new CanvasJS.Chart("chartContainer", {
+                    title: {
+                        text: "Graph for DataPoints Entered"
+                    },
+                    data: [{
+                        type: "line",
+                        dataPoints: dps
+                    }]
+                });
+
+                function addDataPointsAndRender() {
+                    xValue = Number(document.getElementById("xValue").value);
+                    yValue = Number(document.getElementById("yValue").value);
+                    dps.push({
+                        x: xValue,
+                        y: yValue
+                    });
+                    chart.render();
+                }
+
+                var renderButton = document.getElementById("renderButton");
+                renderButton.addEventListener("click", addDataPointsAndRender);
+            }
+        </script>
+        <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    </body>
+</html>
