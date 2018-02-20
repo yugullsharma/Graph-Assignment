@@ -63,11 +63,12 @@ button:hover
         padding: 10px;
     }
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 767px) {
     input{
         width: 100%;
         margin: 14px auto;
-}
+        padding: 10px;
+    }
     button
     {
       margin: 17px auto;
@@ -75,3 +76,21 @@ button:hover
 
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
