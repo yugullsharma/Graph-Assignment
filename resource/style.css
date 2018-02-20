@@ -52,7 +52,6 @@ button
 }
 button:hover
 {
-
     background-color: #09ba09;
     color: #fff;
 }
@@ -72,8 +71,6 @@ button:hover
     button
     {
       margin: 17px auto;
-
-
     }
 }
 
